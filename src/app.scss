@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Roboto&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+$heading-primary: #212121;
+$bg-primary: #f9f9f9;
+$text-primary: #545454;
+$primary-color: #3766e8;
+
+.app {
+  background-color: $bg-primary;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  .bg-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    overflow: hidden;
+
+    .relative-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      .abs-container {
+        position: absolute;
+        width: 170rem;
+        height: 40rem;
+        background-color: #f0f0f0;
+        opacity: 0.5;
+        top: 15rem;
+        left: -10rem;
+        transform: rotate(-30deg);
+        position: relative;
+
+        &::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 80rem;
+          height: 1.5rem;
+          background-color: $primary-color;
+          opacity: 0.2;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 80rem;
+          height: 1.5rem;
+          background-color: $primary-color;
+          opacity: 0.2;
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  width: 100%;
+  height: 100%;
+  padding: 3rem 6rem;
+  display: grid;
+  grid-template-columns: repeat(28, 1fr);
+  gap: 1.5rem;
+
+  .nav {
+    grid-column: 1/4;
+  }
+
+  .container {
+    z-index: 1;
+    grid-column: 10/20;
+    background-color: white;
+    height: 49rem;
+    align-self: center;
+    padding: 1.5rem 4rem;
+
+    .content-container {
+      display: grid;
+      height: 45rem;
+      align-self: center;
+      grid-template-rows: repeat(7, 1fr);
+      background-color: white;
+      gap: 1.5rem;
+
+      .img-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 51px;
+          height: 48px;
+        }
+      }
+
+      .title {
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 2.3rem;
+        line-height: 3rem;
+        color: $heading-primary;
+      }
+
+      p {
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+        text-align: center;
+        color: $text-primary;
+
+        .line1 {
+          display: block;
+        }
+      }
+
+      .companyName-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        input {
+          background-color: transparent;
+          border: solid 1px #ced4da;
+          padding: 1rem 0.5rem;
+        }
+      }
+
+      .industry-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        select {
+          background-color: transparent;
+          border: solid 1px #ced4da;
+          padding: 1rem 0.5rem;
+        }
+      }
+
+      label {
+        font-family: 'Inter', sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+      }
+
+      .companySize-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        .sizes {
+          display: flex;
+          justify-content: space-around;
+
+          label {
+            //   border: solid 1px white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.2rem;
+            background-color: #f0f0f0;
+          }
+
+          input:checked + label {
+            background-color: $primary-color;
+          }
+        }
+      }
+
+      .button-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+          width: 100%;
+          border-style: none;
+          background-color: $primary-color;
+          color: white;
+          padding: 1rem 0;
+          border-radius: 0.2rem;
+        }
+      }
+
+      .companySize-container input {
+        display: none;
+      }
+    }
+  }
+}
